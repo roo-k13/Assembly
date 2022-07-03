@@ -1,0 +1,37 @@
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        byte biggestValue;
+        string userInput;
+        bool isParseSuccessfull;
+        
+        Console.Write("Please enter the first number: ");
+        userInput = Console.ReadLine();
+        isParseSuccessfull = byte.TryParse(userInput, out byte firstValue);
+        
+        biggestValue = firstValue;
+        
+        Console.Write("Please enter the first number: ");
+        userInput = Console.ReadLine();
+        isParseSuccessfull = byte.TryParse(userInput, out byte secondValue);
+        
+        if (secondValue > biggestValue) { biggestValue = secondValue; }
+        
+        Console.Write("Please enter the first number: ");
+        userInput = Console.ReadLine();
+        isParseSuccessfull = byte.TryParse(userInput, out byte thirdValue);
+        
+        if (thirdValue > biggestValue) { biggestValue = thirdValue; }
+        
+        Console.Write("Please enter the first number: ");
+        userInput = Console.ReadLine();
+        isParseSuccessfull = byte.TryParse(userInput, out byte fourthValue);
+        
+        if (fourthValue > biggestValue) { biggestValue = fourthValue; }
+        
+        Console.WriteLine("The biggest value inserted was: " + biggestValue);
+    }
+}
