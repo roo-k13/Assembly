@@ -1,0 +1,27 @@
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        string userInput;
+        bool isParseSuccessfull;
+        
+        Console.Write("Please insert the first value: ");
+        userInput = Console.ReadLine();
+        isParseSuccessfull = byte.TryParse(userInput, out byte firstValue);
+        
+        Console.Write("Please insert the second value: ");
+        userInput = Console.ReadLine();
+        isParseSuccessfull = byte.TryParse(userInput, out byte secondValue);
+        
+        double firstDivision = (double)firstValue / secondValue;
+        double secondDivision = (double)secondValue / firstValue;
+        
+        if (firstDivision > secondDivision) { Console.WriteLine("The highest quotient is " + firstDivision); }
+        
+        else if (secondDivision > firstDivision) { Console.WriteLine("The highest quotient is " + secondDivision); }
+        
+        else { Console.WriteLine("The quotients are the same."); }
+    }
+}
